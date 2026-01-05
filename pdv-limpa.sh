@@ -3,8 +3,12 @@
 DIR="/Zanthus/Zeus/pdvJava"
 DIR2="/LOG_ECF"
 
+mkdir -p "$DIR"
+mkdir -p "$DIR2"
+
 echo "removendo Logs do PDV";
-find "$DIR" -type f -name "*.ZL1" -o -path "$DIR2/*" -exec rm -f {} +
+find "$DIR" -type f -name "*.ZL1" -exec rm -f {} +
+rm -rf "$DIR2/*"
 
 echo "removendo Logs DMPCliSitef";
 rm "$DIR"/CliSiTef.2* &>>/dev/null
